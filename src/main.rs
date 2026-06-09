@@ -27,6 +27,7 @@ fn main() -> Result<()> {
         let cfg = config::load();
         let auth = slack::Auth::from_env();
 
+        println!("{} v{}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"));
         println!("config: {}", config::config_path().display());
         match &cfg {
             Ok(cfg) => {
